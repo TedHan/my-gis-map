@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-gis-map": {
+    "sac-cannon": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-gis-map",
+            "outputPath": "dist/sac-cannon",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [],
@@ -39,7 +39,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "none"
             },
             "development": {
               "buildOptimizer": false,
@@ -56,10 +56,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "my-gis-map:build:production"
+              "browserTarget": "sac-cannon:build:production"
             },
             "development": {
-              "browserTarget": "my-gis-map:build:development"
+              "browserTarget": "sac-cannon:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-gis-map:build"
+            "browserTarget": "sac-cannon:build"
           }
         },
         "test": {

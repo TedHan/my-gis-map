@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "REEJI-HonghuangLiGB-Medium";
+  src: url("/assets/fonts/REEJI-HonghuangLiGB-Medium-2.ttf");
+}
+
+::ng-deep .cannon-tooltip {
+  position: relative;
+  box-sizing: border-box;
+  width: 231px;
+  height: 234px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+::ng-deep .cannon-tooltip-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+::ng-deep .cannon-tooltip-title {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 16px;
+  color: #daf2f2;
+}
+
+::ng-deep .cannon-tooltip-count,
+::ng-deep .cannon-tooltip-chart {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+  line-height: 1;
+  font-size: 14px;
+  color: #c4fff9;
+}
+
+::ng-deep .cannon-tooltip-count > label {
+  font-family: "REEJI-HonghuangLiGB-Medium";
+  font-size: 20px;
+}
+
+::ng-deep .cannon-tooltip-chart-box {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  margin-top: 6px;
+}

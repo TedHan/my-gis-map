@@ -28,7 +28,7 @@ const filesName = [
   "styles.css",
 ];
 const area = "gis",
-  folderPath = "./dist/my-gis-map";
+  folderPath = "./dist/sac-cannon";
 components.map((item) => {
   item["filesName"] = filesName;
   item["area"] = area;

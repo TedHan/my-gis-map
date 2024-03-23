@@ -84,6 +84,6 @@ export class AppModule {
       const ins = this._ngElementStrategy.componentRef.instance;
       ins.applyEchartsOption(option);
     };
-    this.registerEl('my-gis-map', gisMap);
+    this.registerEl('sac-cannon', gisMap);
   }
 }
