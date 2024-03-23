@@ -12,11 +12,10 @@ import { config } from '../../src/decorators/config.js';
 import * as echarts from '../assets/lib/echarts.min5.4.3.js';
 import { overlayEchartsInit } from '../assets/lib/leaflet-echarts.js';
 import { SIMPLE_WORLD } from './data/simple-world.js';
-import { deepCopy } from './deep-copy.js';
 import { EchartsService } from './echarts.service';
 import { GIS_CONFIG } from './gis-config.js';
 import { getEchartsOption } from './options/echarts.option.js';
-import { randomKeyGenerator } from './random-key-generator.js';
+import { deepCopy, randomKeyGenerator } from './utils';
 
 type EchartsScatter = {
   name: string;
