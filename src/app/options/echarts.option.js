@@ -1,12 +1,12 @@
 function getEchartsOption() {
   return {
     geo3D: {
-      map: "50000",
-      roam: true,
+      map: "world",
+      roam: false,
       tooltip: {
-        show: true,
-        trigger: "axis",
+        show: false,
       },
+      regionHeight: 5,
       itemStyle: {
         color: "#efcbcb",
         borderWidth: 1.5,
@@ -82,26 +82,57 @@ function getEchartsOption() {
         },
       ],
     },
-    // colorMaterial: {
-    //   detailTexture: pattern,
-    // },
     geo: {
-      map: "50000",
-      show: false,
+      show: true,
+      map: "world",
+      roam: false,
+      zlevel: 3,
+      left: 20,
+      top: 20,
+      right: 20,
+      bottom: 20,
       label: {
-        emphasis: {
-          show: false,
-        },
+        show: false,
       },
       itemStyle: {
-        normal: {
-          areaColor: "#323c48",
-          borderColor: "#111",
+        areaColor: {
+          type: "radial",
+          x: 800,
+          y: 320,
+          r: 700,
+          colorStops: [
+            {
+              offset: 0,
+              color: "rgba(51, 121, 203, 0.9)", // 0% 处的颜色
+            },
+            {
+              offset: 1,
+              color: "rgba(30, 63, 120, 0.9)", // 100% 处的颜色
+            },
+          ],
+          global: true, // 缺省为 false
         },
-        emphasis: {
-          areaColor: "#2a333d",
-        },
+        borderColor: "rgba(117, 171, 222, 0.9)",
+        borderWidth: 1,
       },
+      emphasis: {
+        disabled: true,
+      },
+      tooltip: {
+        show: false,
+      },
+      regions: [
+        {
+          name: "China",
+          itemStyle: {
+            borderColor: "rgba(77, 243, 248, 1)",
+            borderWidth: 3,
+            shadowColor: "rgba(77, 243, 248, 1)",
+            shadowBlur: 10,
+          },
+          label: { show: false, color: "#fff", fontSize: 16 },
+        },
+      ],
     },
     tooltip: {
       show: true,
@@ -230,16 +261,16 @@ function getEchartsOption() {
           opacity: 0.01, //尾迹线条透明度
           curveness: 0.3, //尾迹线条曲直度
         },
-        emphasis: {
-          lineStyle: {
-            color: "white",
-            width: 1, //尾迹线条宽度
-            opacity: 0.3, //尾迹线条透明度
-            curveness: 0.3, //尾迹线条曲直度
-          },
-          disabled: false,
-          focus: "series",
-        },
+        // emphasis: {
+        //   lineStyle: {
+        //     color: "white",
+        //     width: 1, //尾迹线条宽度
+        //     opacity: 0.3, //尾迹线条透明度
+        //     curveness: 0.3, //尾迹线条曲直度
+        //   },
+        //   disabled: false,
+        //   focus: "series",
+        // },
 
         selectMode: true,
         select: {

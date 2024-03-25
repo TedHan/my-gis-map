@@ -84,6 +84,24 @@ export class AppModule {
       const ins = this._ngElementStrategy.componentRef.instance;
       ins.applyEchartsOption(option);
     };
+    gisMap.prototype.createMapCannon = function (
+      icons: any,
+      lines: any,
+      points: any,
+      interval: any,
+      tooltipCountLabel: any,
+      tooltipChartLabel: any
+    ) {
+      const ins = this._ngElementStrategy.componentRef.instance;
+      ins.createMapCannon(
+        icons,
+        lines,
+        points,
+        interval,
+        tooltipCountLabel,
+        tooltipChartLabel
+      );
+    };
     this.registerEl('sac-cannon', gisMap);
   }
 }
