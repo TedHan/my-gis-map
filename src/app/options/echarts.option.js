@@ -83,13 +83,13 @@ function getEchartsOption() {
       ],
     },
     geo: {
-      show: true,
+      show: false,
       map: "world",
       roam: false,
       zlevel: 3,
-      left: 20,
-      top: 20,
-      right: 20,
+      left: 0,
+      top: 5,
+      right: 0,
       bottom: 20,
       label: {
         show: false,

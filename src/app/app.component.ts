@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -14,20 +15,6 @@ import { GIS_CONFIG } from './gis-config';
 import { getEchartsOption } from './options/echarts.option';
 import { deepCopy, randomKeyGenerator, translatePoint } from './utils';
 
-type EchartsScatter = {
-  name: string;
-  value: [number | string, number | string, any];
-};
-type EchartsNode = {
-  name: string;
-  coords: [string | number, string | number];
-  value: number;
-};
-type EchartsData = {
-  source?: EchartsNode;
-  target?: EchartsNode;
-};
-
 @config(GIS_CONFIG)
 @Component({
   selector: 'app-root',
@@ -37,7 +24,10 @@ type EchartsData = {
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   static tagNamePrefix: string = 'sac-cannon';
 
-  @ViewChild('map', { static: true }) map!: ElementRef<HTMLDivElement>;
+  @ViewChild('sacCannonMap', { static: true }) map!: ElementRef<HTMLDivElement>;
+
+  @Input()
+  sacCannonMapBg: string = '/assets/img/agg_map.png';
 
   constructor() {}
 
@@ -141,9 +131,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     scatter.data = countryPoints;
     scatter.tooltip = {
       show: true,
-      backgroundColor: 'rgba(0, 0, 0, 0)',
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
       borderWidth: 0,
       padding: 0,
+      extraCssText: 'box-shadow: none',
       formatter: (params: any) => {
         const { name } = params;
         const detail = points.find((i) => i.country === name);
