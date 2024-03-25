@@ -88,7 +88,7 @@ function getEchartsOption() {
       roam: false,
       zlevel: 3,
       left: 0,
-      top: 5,
+      top: 36,
       right: 0,
       bottom: 20,
       label: {
