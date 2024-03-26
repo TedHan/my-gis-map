@@ -47,6 +47,10 @@ export class AppModule {
       const ins = this._ngElementStrategy.componentRef.instance;
       ins.applyEchartsOption(option);
     };
+    sacCannon.prototype.createWorldMap = function () {
+      const ins = this._ngElementStrategy.componentRef.instance;
+      ins.createWorldMap();
+    };
     sacCannon.prototype.createMapCannon = function (
       icons: any,
       lines: any,

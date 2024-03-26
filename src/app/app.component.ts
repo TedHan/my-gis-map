@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   Input,
@@ -21,10 +20,10 @@ import { deepCopy, randomKeyGenerator, translatePoint } from './utils';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
 })
-export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   static tagNamePrefix: string = 'sac-cannon';
 
-  @ViewChild('sacCannonMap', { static: true }) map!: ElementRef<HTMLDivElement>;
+  @ViewChild('sacCannonMap') map!: ElementRef<HTMLDivElement>;
 
   @Input()
   sacCannonMapBg: string = '/assets/img/agg_map.png';
@@ -32,10 +31,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    this.createWorldMap();
-  }
 
   ngOnDestroy(): void {
     if (this.carousel) {
@@ -55,7 +50,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   worldMapInstance: any;
-  private createWorldMap() {
+  createWorldMap() {
     const mapDom = this.map.nativeElement;
 
     echarts.registerMap('world', world);
