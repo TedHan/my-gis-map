@@ -295,7 +295,7 @@ export class AppComponent implements OnInit, OnDestroy {
                     borderRadius: 10,
                   },
                   label: {
-                    color: '#42B5AF',
+                    color: '#c4deff',
                     fontSize: 12,
                   },
                   data: chartData,
